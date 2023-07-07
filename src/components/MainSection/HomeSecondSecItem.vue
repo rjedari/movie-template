@@ -23,7 +23,7 @@
       class="text-base flex justify-center text-gray-300 hover:text-white px-10"
     >
       <p>
-        {{ title }}{{ index+1 }}
+        {{ title }}
       </p>
     </div>
   </div>

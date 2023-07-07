@@ -4,7 +4,7 @@
   >
     <div class="flex-col flex items-center justify-center">
       <div class="flex flex-col max-xs:max-w-xs">
-        <div class="text-white text-3xl flex justify-center py-10">
+        <div class="text-white text-3xl max-sm:text-xl flex justify-center py-10">
           MOST POPULAR
         </div>
 
@@ -50,7 +50,7 @@
       </div>
 
       <div
-        class="flex overflow-y-hidden overflow-x-auto max-w-6xl bg-black max-xl:max-w-xl max-lg:max-w-lg max-md:w-fit max-md:max-w-md max-sm:max-w-screen-xxs"
+        class="flex overflow-y-hidden overflow-x-auto max-w-6xl bg-black max-xl:max-w-xl max-lg:max-w-lg max-md:w-fit max-md:max-w-md max-sm:w-40"
       >
         <div v-for="(movie, index) in movieList" :key="movie.id">
           <HomeSecondSecItem
