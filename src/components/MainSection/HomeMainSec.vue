@@ -22,6 +22,7 @@ import SliderLinks from "./SliderLinks.vue";
 import TheButton from "./TheButton.vue";
 import FirstListWrapper from "./FirstListWrapper.vue";
 import FirstListWrapperAside from "./FirstListWrapperAside.vue";
+
 const SliderLink = reactive([
   { link: "Recommended" },
   { link: "Movies" },

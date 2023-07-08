@@ -7,4 +7,5 @@ import './main.css'
 import App from './App.vue'
 import HeaderMenu from './components/header/HeaderMenu.vue'
 import TheButtonVue from './components/MainSection/TheButton.vue';
-createApp(App).component("HeaderMenu",HeaderMenu).component("TheButton",TheButtonVue).mount('#app')
+import TheLinkSlider from './components/MainSection/TheLinkSlider.vue'
+createApp(App).component("HeaderMenu",HeaderMenu).component("TheButton",TheButtonVue).component("TheLinkSlider",TheLinkSlider).mount('#app')

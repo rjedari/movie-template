@@ -17,6 +17,8 @@
     </header>
   <home-main-sec /> 
   <home-seconde-sec />
+  <home-third-sec />
+  <home-forth-sec />
   </template>
 
 <script setup>
@@ -26,6 +28,8 @@ import Practice from "./Practice.vue";
 import List from "./List.vue";
 import HomeMainSec from "./MainSection/HomeMainSec.vue"
 import HomeSecondeSec from "./MainSection/HomeSecondeSec.vue";
+import HomeThirdSec from "./MainSection/HomeThirdSec.vue";
+import HomeForthSec from "./MainSection/HomeForthSec.vue";
 import image from "../assets/image/header-img.jpg";
 import imageA from "../assets/image/2.jpg";
 // import image from "./assets/image/header-img.jpg"
