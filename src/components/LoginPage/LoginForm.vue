@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-import { onMounted, reactive, ref } from "vue";
+import { onMounted, ref } from "vue";
 const myCustomStyleClass = "my-custom-style";
 const title = "sign in";
 </script>
