@@ -1,49 +1,39 @@
 <template>
-    <header class="bg-black pb-20">
-      <div
-        class="  bg-black max-sm:max-w-fit  container"
-        style="position: relative; z-index: 1"
-      >
-        <div class="flex flex-col max-lg:pb-12">
-          <div
-            class="fixed header-bg right-0 left-0 w-full top-0"
-            style="z-index: 999"
-          >
-            <header-menu :title="title" />
-          </div>
-          <header-grid class="pb-20"   />
+  <header class="bg-black pb-20">
+    <div
+      class="bg-black max-sm:max-w-fit container"
+      style="position: relative; z-index: 1"
+    >
+      <div class="flex flex-col max-lg:pb-12">
+        <div
+          class="fixed header-bg right-0 left-0 w-full top-0"
+          style="z-index: 999"
+        >
+          <header-menu :title="title" />
         </div>
+        <header-grid class="pb-20" />
       </div>
-    </header>
-  <home-main-sec /> 
+    </div>
+  </header>
+  <home-main-sec />
   <home-seconde-sec />
   <home-third-sec />
   <home-forth-sec />
-  </template>
+    <footer-main />
+</template>
 
 <script setup>
 import { ref, reactive } from "vue";
 import HeaderGrid from "./header/HeaderGrid.vue";
 import Practice from "./Practice.vue";
 import List from "./List.vue";
-import HomeMainSec from "./MainSection/HomeMainSec.vue"
+import HomeMainSec from "./MainSection/HomeMainSec.vue";
 import HomeSecondeSec from "./MainSection/HomeSecondeSec.vue";
 import HomeThirdSec from "./MainSection/HomeThirdSec.vue";
 import HomeForthSec from "./MainSection/HomeForthSec.vue";
+import FooterMain from "./footer/FooterMain.vue";
 import image from "../assets/image/header-img.jpg";
 import imageA from "../assets/image/2.jpg";
-// import image from "./assets/image/header-img.jpg"
-// import image from "./assets/image/header-img.jpg"
-// import image from "./assets/image/header-img.jpg"
-// import image from "./assets/image/header-img.jpg"
-// import image from "./assets/image/header-img.jpg"
-// import image from "./assets/image/header-img.jpg"
-// import image from "./assets/image/header-img.jpg"
-// import image from "./assets/image/header-img.jpg"
-// import image from "./assets/image/header-img.jpg"
-// import image from "./assets/image/header-img.jpg"
-
-
 </script>
 <style>
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");

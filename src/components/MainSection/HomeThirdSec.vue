@@ -87,6 +87,6 @@ const title = 'See All'
 }
 
 .my-custom-style {
-  @apply border container max-sm:w-full mx-auto w-96 py-4 px-8 bg-black text-white justify-center flex my-10 hover:bg-white duration-500 hover:text-black;
+  @apply border container max-sm:w-full mx-auto w-96 py-4 px-8 bg-black text-white justify-center  flex my-10 hover:bg-white duration-500 hover:text-black;
 }
 </style>
