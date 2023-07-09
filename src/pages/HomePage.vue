@@ -1,7 +1,7 @@
 <template>
-  <header class="bg-black pb-20">
+  <header class="  pb-20 header-grid-background">
     <div
-      class="bg-black max-sm:max-w-fit container"
+      class=" max-sm:max-w-fit container"
       style="position: relative; z-index: 1"
     >
       <div class="flex flex-col max-lg:pb-12">
@@ -24,14 +24,13 @@
 
 <script setup>
 import { ref, reactive } from "vue";
-import HeaderGrid from "./header/HeaderGrid.vue";
-import Practice from "./Practice.vue";
-import List from "./List.vue";
-import HomeMainSec from "./MainSection/HomeMainSec.vue";
-import HomeSecondeSec from "./MainSection/HomeSecondeSec.vue";
-import HomeThirdSec from "./MainSection/HomeThirdSec.vue";
-import HomeForthSec from "./MainSection/HomeForthSec.vue";
-import FooterMain from "./footer/FooterMain.vue";
+import HeaderGrid from "../components/header/HeaderGrid.vue";
+
+import HomeMainSec from "../components/MainSection/HomeMainSec.vue";
+import HomeSecondeSec from "../components/MainSection/HomeSecondeSec.vue";
+import HomeThirdSec from "../components/MainSection/HomeThirdSec.vue";
+import HomeForthSec from "../components/MainSection/HomeForthSec.vue";
+import FooterMain from "../components/footer/FooterMain.vue";
 import image from "../assets/image/header-img.jpg";
 import imageA from "../assets/image/2.jpg";
 </script>
@@ -142,5 +141,8 @@ import imageA from "../assets/image/2.jpg";
   animation-name: drawer;
   animation-duration: 0.4s;
   animation-fill-mode: forwards;
+}
+.header-grid-background{
+  background-image: url(../assets/image/bg.jpg);
 }
 </style>
