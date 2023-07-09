@@ -1,7 +1,7 @@
 <template>
     <button :class="['my-custom-style', customStyleClass]"
    >
-        {{ title }}
+        {{ title }}     <slot></slot>
       </button>
 </template>
 
