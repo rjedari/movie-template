@@ -123,7 +123,7 @@
 </template>
 
 <script setup>
-import { onMounted, reactive, ref } from "vue";
+import { onMounted, ref } from "vue";
 import footerItems from "./footerItems.vue"
 import { API_IMAGE_BASE_URL, API_IMAGE_SIZE } from "../constance/api-constants";
 
