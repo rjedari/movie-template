@@ -1,5 +1,5 @@
 <template>
-  <header class=" pb-20 header-grid-background">
+  <header class="  pb-20 header-grid-background">
     <div
       class=" max-sm:max-w-fit container"
       style="position: relative; z-index: 1"
@@ -25,8 +25,7 @@
 <script setup>
 import { ref, reactive } from "vue";
 import HeaderGrid from "../components/header/HeaderGrid.vue";
-import Practice from "../components/Practice.vue";
-import List from "../components/List.vue";
+
 import HomeMainSec from "../components/MainSection/HomeMainSec.vue";
 import HomeSecondeSec from "../components/MainSection/HomeSecondeSec.vue";
 import HomeThirdSec from "../components/MainSection/HomeThirdSec.vue";
@@ -145,6 +144,5 @@ import imageA from "../assets/image/2.jpg";
 }
 .header-grid-background{
   background-image: url(../assets/image/bg.jpg);
-  
 }
 </style>
