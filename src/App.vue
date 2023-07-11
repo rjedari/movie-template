@@ -1,7 +1,7 @@
 <template>
 
 <home-page />
-<!-- <main-login-page /> -->
+<main-login-page />
 </template>
 
 <script setup>

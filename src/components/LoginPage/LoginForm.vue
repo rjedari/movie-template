@@ -17,7 +17,6 @@
 <script setup>
 import { onMounted, reactive, ref } from "vue";
 import TheInput from "../TheInput.vue";
-import TheInputVue from "../TheInput.vue";
 
 const myCustomStyleClass = "my-custom-style";
 const email = "Email";

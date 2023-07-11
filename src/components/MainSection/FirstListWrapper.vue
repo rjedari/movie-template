@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { reactive ,ref,onMounted} from "vue";
 import FirstListWrapperItems from "./FirstListWrapperItems.vue";
 import { API_IMAGE_BASE_URL, API_IMAGE_SIZE } from "../constance/api-constants-two";
 
