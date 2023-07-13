@@ -16,6 +16,6 @@ import LoginForm from "../components/LoginPage/LoginForm.vue";
 
 <style scoped>
 .pooster {
-  background-image: url("../../assets/image/posterBackground-repeatable-34b3751e.jpg");
+  background-image: url('../assets/image/posterBackground-repeatable-34b3751e.jpg');
 }
 </style>

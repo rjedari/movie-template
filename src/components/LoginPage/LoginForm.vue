@@ -1,7 +1,7 @@
 <template>
   <form>
-    <TheInput :title="email" > Email</TheInput>
-    <the-input :title="password" > Password </the-input>
+    <TheInput :title="email" :id="email" > Email</TheInput>
+    <the-input :title="password"  :id="pass"> Password </the-input>
     <div class="flex items-center justify-between">
       <the-button   :my-custom-style="myCustomStyleClass" > sign up </the-button>
       <a
