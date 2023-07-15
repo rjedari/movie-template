@@ -1,16 +1,10 @@
 <template>
-  <header class="  pb-20 header-grid-background">
+  <header class="pb-20 header-grid-background">
     <div
-      class=" max-sm:max-w-fit container"
+      class="max-sm:max-w-fit container"
       style="position: relative; z-index: 1"
     >
       <div class="flex flex-col max-lg:pb-12">
-        <div
-          class="fixed header-bg right-0 left-0 w-full top-0"
-          style="z-index: 999"
-        >
-          <header-menu :title="title" />
-        </div>
         <header-grid class="pb-20" />
       </div>
     </div>
@@ -19,7 +13,6 @@
   <home-seconde-sec />
   <home-third-sec />
   <home-forth-sec />
-    <footer-main />
 </template>
 
 <script setup>
@@ -30,7 +23,6 @@ import HomeMainSec from "../components/MainSection/HomeMainSec.vue";
 import HomeSecondeSec from "../components/MainSection/HomeSecondeSec.vue";
 import HomeThirdSec from "../components/MainSection/HomeThirdSec.vue";
 import HomeForthSec from "../components/MainSection/HomeForthSec.vue";
-import FooterMain from "../components/footer/FooterMain.vue";
 import image from "../assets/image/header-img.jpg";
 import imageA from "../assets/image/2.jpg";
 </script>
@@ -142,7 +134,7 @@ import imageA from "../assets/image/2.jpg";
   animation-duration: 0.4s;
   animation-fill-mode: forwards;
 }
-.header-grid-background{
+.header-grid-background {
   background-image: url(../assets/image/bg.jpg);
 }
 </style>

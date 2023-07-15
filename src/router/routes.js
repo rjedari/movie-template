@@ -1,7 +1,7 @@
 import HomePage from "../pages/HomePage.vue";
 import MainLoginPage from "../pages/MainLoginPage.vue";
 
-export const routes = [
+ const routes = [
   { path: "/", name: "Home", component: HomePage},
   {
     path: "/login-page",
@@ -9,3 +9,4 @@ export const routes = [
     component: MainLoginPage,
   },
 ];
+export {routes as routes}
