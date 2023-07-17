@@ -99,6 +99,12 @@
                     <li
                       class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
                     >
+                     
+                      Log in 
+                    </li>
+                    <li
+                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
+                    >
                       Log out
                     </li>
                   </ul>
@@ -112,149 +118,19 @@
         <div
           class="w-full flex justify-center text-base items-center container"
         >
-          <div class="relative x pt-4">
-            <a class="text-white px-10 py-4 hover:text-yellow-500" href=""
-              >MOVIES</a
-            >
-            <div class="absolute hidden   top-12 bg-gray-100 " >
-              <div class="flex">
-                <div class="text-sm px-4 bg-gray-100 w-80">
-                  <ul class=" ">
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      MOVIE HOME SPACE
-                    </li>
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      Premieres and announcements
-                    </li>
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      Trailers
-                    </li>
-                  </ul>
-                  <ul class="py-2">
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      MOVIE HOME SPACE
-                    </li>
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      Premieres and announcements
-                    </li>
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      Trailers
-                    </li>
-                  </ul>
-                  <ul class="">
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      MOVIE HOME SPACE
-                    </li>
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      Premieres and announcements
-                    </li>
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      Trailers
-                    </li>
-                  </ul>
-                </div>
-                <div class="ml-4 py-10 bg-white poster">
-                  <img
-                    src="../../assets/image/postermenu.jpg"
-                    class="w-full"
-                    alt="Ad"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+         <header-sub-menu  :sub-img="true"> MOVIES </header-sub-menu>
+         <header-sub-menu  :sub-img="true" > TV SERIES </header-sub-menu>
+         <header-sub-menu  > GAMES </header-sub-menu>
+         <header-sub-menu  :sub-img="true" > RAZNKING </header-sub-menu>
+         <header-sub-menu > VOD </header-sub-menu>
+         <header-sub-menu > TV SHOW </header-sub-menu>
+         <header-sub-menu > MY FILM WEB </header-sub-menu>
 
+        
+<!-- 
           <div class="relative x pt-4">
             <a class="text-white px-10 py-4 hover:text-yellow-500" href=""
-              >TV SERIES</a
-            >
-            <div class="absolute hidden top-12 bg-gray-100">
-              <div class="flex">
-                <div class="text-sm px-4 bg-gray-100 w-80">
-                  <ul class="">
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      MOVIE HOME SPACE
-                    </li>
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      Premieres and announcements
-                    </li>
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      Trailers
-                    </li>
-                  </ul>
-                  <ul class="py-2">
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      MOVIE HOME SPACE
-                    </li>
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      Premieres and announcements
-                    </li>
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      Trailers
-                    </li>
-                  </ul>
-                  <ul class="">
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      MOVIE HOME SPACE
-                    </li>
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      Premieres and announcements
-                    </li>
-                    <li
-                      class="py-1 my-2 text-gray-800 font-bold hover:text-yellow-600"
-                    >
-                      Trailers
-                    </li>
-                  </ul>
-                </div>
-                <div class="ml-4 py-10 bg-white poster">
-                  <img
-                    src="../../assets/image/postermenu.jpg"
-                    class="w-full"
-                    alt="Ad"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="relative x pt-4">
-            <a class="text-white px-10 py-4 hover:text-yellow-500" href=""
-              >GAMES</a
+              ></a
             >
             <div class="absolute hidden top-12 bg-gray-100">
               <div class="flex">
@@ -292,7 +168,7 @@
 
           <div class="relative x pt-4">
             <a class="text-white px-10 py-4 hover:text-yellow-500" href=""
-              >RAZNKING</a
+              ></a
             >
             <div class="absolute hidden top-12 bg-gray-100">
               <div class="flex">
@@ -426,19 +302,20 @@
                     >
                       <a href=""> Setting</a>
                     </li>
+
                   </UL>
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import HeaderSubMenu from './HeaderSubMenu.vue';
 </script>
 
 <style scoped>
