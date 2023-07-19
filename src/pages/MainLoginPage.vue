@@ -5,32 +5,7 @@
       <div class="bg-white p-8 rounded-lg shadow-lg w-full md:w-1/2 lg:w-1/3">
         <h1 class="text-2xl font-bold mb-6">Login</h1>
         <login-form  />
-<!-- 
-        <form
-          @submit.prevent="signin" target="_top"
-          class="flex flex-col items-center gap-2 justify-center content-center text-secondary w-full"
-        >
-          <label for="username" ></label>
 
-          <input
-            type="text"
-            name="username"
-            v-model="username"
-            placeholder="Username"
-            class="text-black border-[3px] border-primary rounded-3xl block bg-transparent p-3 outline-none w-full"
-          />
-          <p class="error" id="username"></p>
-          <label for="password" class="hidden"></label>
-          <input
-            type="password"
-            name="password"
-            v-model="password"
-            placeholder="Password"
-            class="text-black border-[3px] border-primary rounded-3xl block bg-transparent p-3 outline-none w-full"
-          />
-          <p class="error" id="password"></p>
-          <input type="submit" class="bg-primary text-white p-2 rounded-3xl" />
-        </form> -->
        
       </div>
     </div>
@@ -43,14 +18,6 @@ import LoginForm from "../components/LoginPage/LoginForm.vue";
 import { ref } from "vue";
 import { login } from "../Utils/loginUtils";
 import TheInput from "../components/TheInput.vue"
-
-// const username = ref("");
-// const password = ref("");
-
-// function signin() {
-//   login(username.value, password.value);
-//   console.log(username.value, password.value);
-// }
 
 </script>
 

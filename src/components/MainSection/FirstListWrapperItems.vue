@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col shadow-md mx-auto w-60 hover-changes-header">
+  <div class="flex flex-col shadow-md mx-5 w-60 h-60 hover-changes-header">
     <div class="relative h-32 overflow-hidden">
       <div
         class="absolute inset-0 transition-transform duration-500 transform hover:scale-110"
@@ -11,14 +11,14 @@
     </div>
     <div class="text-sm flex flex-col p-5 justify-between">
       <router-link :to="{name:'movie-detail' , params :{id}}" class="text-black hovering-text">
-        {{ shortenOverview(overview, 80) }}
+        {{ shortenOverview(overview, 70) }}
       </router-link>
     </div>
   </div>
 </template>
 
 <script setup>
-defineProps(["overview", "src", "id"]);
+defineProps(["overview", "src", "id" ]);
 function shortenOverview(overview, maxLength) {
   if (overview.length <= maxLength) {
     return overview;

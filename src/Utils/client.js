@@ -1,4 +1,4 @@
-import { API_READ_ACCESS_TOKEN } from "../constants/api-constants";
+import { API_READ_ACCESS_TOKEN } from "../components/constance/api-constants";
 
 export async function client(url, options = {}) {
     const fetchOptions = {

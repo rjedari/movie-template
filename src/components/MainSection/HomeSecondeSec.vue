@@ -69,12 +69,12 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from "vue";
+import { ref, reactive, onMounted, watch } from "vue";
 import { API_IMAGE_BASE_URL, API_IMAGE_SIZE } from "../constance/api-constants";
 import HomeSecondSecItem from "./HomeSecondSecItem.vue";
 import imageA from "../../assets/image/2.a.jpg";
 const title = ref("Check the most popular videos");
-
+import { useFetch } from "../..//composable/useFetch";
 const movieList = ref([]);
 
 const options = {

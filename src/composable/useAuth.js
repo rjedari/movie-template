@@ -1,13 +1,21 @@
-import { API_BASE_URL, API_READ_ACCESS_TOKEN, API_VERSION } from '../components/constance/api-constants'
+import { API_BASE_URL, API_READ_ACCESS_TOKEN, API_VERSION } from '@/constants/api-constants'
 import {
-  CREATE_REQUEST_TOKEN_URL,
-  CREATE_SESSION_URL,
-  VALIDATE_WITH_LOGIN_URL,
-  ACCOUNT_URL
-} from '../components/constance/endpoints.js'
+CREATE_REQUEST_TOKEN_URL,
+CREATE_SESSION_URL,
+VALIDATE_WITH_LOGIN_URL,
+ACCOUNT_URL
+} from '@/constants/endpoints'
+import { computed } from 'vue'
+import { LOGIN, USER } from '../utils/keys'
+const USER_ID = 'user_id'
+export default function useAuth(app) {
 
+  const user = computed({
+    get: () => JSON.parse(sessionStorage.get(USER_ID) || 'null'),
+    set: (value) => sessionStorage.setItem(USER_ID, JSON.stringify(value))
+  })
 async function createRequestToken() {
-    const res = await fetch(`${API_BASE_URL}${API_VERSION}${CREATE_REQUEST_TOKEN_URL}`, {
+  const res = await fetch(`${API_BASE_URL}${API_VERSION}${CREATE_REQUEST_TOKEN_URL}`, {
       headers: {
         accept: 'application/json',
         Authorization: `Bearer ${API_READ_ACCESS_TOKEN}`
@@ -83,12 +91,14 @@ async function createRequestToken() {
     return data
   }
   
-  export async function login(username, password) {
+   async function login(username, password) {
     const requestToken = await createRequestToken()
     await validateWithLogin(requestToken, username, password)
     await createSession(requestToken)
-    
-  
-    const userData = await getAccountData()
-    console.log('userData', userData)
+
+    user.value = await getAccountData()
   }
+
+  app.provide(USER, user)
+  app.provide(LOGIN, login)
+}
