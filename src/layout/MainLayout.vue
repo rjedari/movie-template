@@ -2,13 +2,12 @@
   <header>
     <header-menu />
   </header>
-  <slot />
-
+<slot/>
   <footer>
     <footer-main />
   </footer>
 </template>
 <script setup>
-import FooterMain from "../footer/FooterMain.vue";
-import HeaderMenu from "../header/HeaderMenu.vue";
+import FooterMain from "../components/footer/FooterMain.vue"
+import HeaderMenu from "../components/header/HeaderMenu.vue";
 </script>

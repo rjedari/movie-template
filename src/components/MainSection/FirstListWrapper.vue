@@ -2,14 +2,18 @@
   <div
     class="px-1 gap-3 grid-rows-3 justify-center max-md:justify-normal items-center max-sm:max-w-fit max-md:grid-cols-2 max-sm:gap-5 max-md:grid-rows-2 max-sm:gap-x-64 max-sm:grid-cols-3 max-sm:overflow-x-auto grid grid-cols-3 mt-5"
   >
-    <div v-for="({ comment ,id}, index) in movieList" :key="id">
-      <first-list-wrapper-items
-        :src="`${API_IMAGE_BASE_URL}${API_IMAGE_SIZE}${poster_path}`"
-        :comment="comment"
-        :id="id"
+  
+    <div v-for="movie in movieList" :key="movie.id"> 
+      <first-list-wrapper-items  
+      :title="movie.original_title"
+            :index="index"
+            :id="movie.id"
+            :overview="movie.overview"
+            :src="`${API_IMAGE_BASE_URL}${API_IMAGE_SIZE}${movie.poster_path}`"
+            :release-date="movie.release_date"
+            :rating="movie.vote_average"
       />
-    </div>
-
+        </div> 
     <!-- <div
       class="flex row-span-2 col-span-2 mx-auto flex-col max-sm:w-60 max-sm:h-32 max-sm:col-span-1 max-sm:row-span-1 max-md:col-span-2 max-md:row-span-2 max-md:w-3/4 max-md:h-72 w-full h-full hover-changes-header"
     >   -->
@@ -17,13 +21,20 @@
 </template>
 
 <script setup>
-import { reactive ,ref,onMounted} from "vue";
-import FirstListWrapperItems from "./FirstListWrapperItems.vue";
-import { API_IMAGE_BASE_URL, API_IMAGE_SIZE } from "../constance/api-constants-two";
+import { reactive, ref, onMounted } from "vue";
+import { toRaw } from '@vue/reactivity'; // Import toRaw from @vue/reactivity
 
-import FirstListWrapperAsideVue from "./FirstListWrapperAside.vue";
+import FirstListWrapperItems from "./FirstListWrapperItems.vue";
+import {
+  API_IMAGE_BASE_URL,
+  API_IMAGE_SIZE,
+  API_READ_ACCESS_TOKEN,
+} from "../constance/api-constants-two";
+
+import FirstListWrapperAside from "./FirstListWrapperAside.vue";
 
 const movieList = ref([]);
+const limit =6
 const options = {
   method: "GET",
   headers: {
@@ -34,14 +45,20 @@ const options = {
 };
 
 onMounted(() => {
-  fetch('https://api.themoviedb.org/3/movie/latest', options)
+  fetch(`https://api.themoviedb.org/3/movie/now_playing`, options)
 
     .then((response) => response.json())
     .then((response) => {
-      movieList.value = response.results;
+     movieList.value =response.results
+   
+
+
     })
     .catch((err) => console.error(err));
 });
+
+
+
 </script>
 
-<style></style>
+<styles></styles>

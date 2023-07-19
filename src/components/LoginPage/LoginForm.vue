@@ -1,9 +1,12 @@
 <template>
-  <form>
-    <TheInput :title="email" :id="email" > Email</TheInput>
-    <the-input :title="password"  :id="pass"> Password </the-input>
+  <form @submit.prevent="signin">
+    <TheInput  id="email" :type="'text'" @inputValue="handleEmailInput"> Email</TheInput>
+
+    <the-input id="password" :type="'password'" @inputValue="handlePassInput">
+      Password
+    </the-input>
     <div class="flex items-center justify-between">
-      <the-button   :my-custom-style="myCustomStyleClass" > sign up </the-button>
+      <the-button :my-custom-style="myCustomStyleClass" :type="'submit'"> Login</the-button>
       <a
         class="inline-block align-baseline font-bold text-sm text-yellow-500 hover:text-yellow-800"
         href="#"
@@ -17,10 +20,23 @@
 <script setup>
 import { onMounted, reactive, ref } from "vue";
 import TheInput from "../TheInput.vue";
+import { login } from "../../Utils/loginUtils";
 
 const myCustomStyleClass = "my-custom-style";
-const email = "Email";
-const password = "Password";
+
+function handleEmailInput(data) {
+  username.value = data;
+}
+function handlePassInput(data) {
+  password.value = data;
+}
+const username = ref("");
+const password = ref("");
+
+function signin() {
+  login(username.value, password.value);
+  console.log(username.value, password.value);
+}
 </script>
 
 <style scoped>
