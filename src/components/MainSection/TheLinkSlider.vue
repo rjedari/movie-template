@@ -1,6 +1,6 @@
 <template>
  
-    <li
+    <li 
     :class="['my-custom-link-style',customStyleLinkClass]"
     >
      {{ title }}

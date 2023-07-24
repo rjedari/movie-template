@@ -61,57 +61,59 @@
               </div>
             </div>
           </section>
-          <section class="container border-gray-200 bg-black rounded-md p-5 flex mx-auto">
-       
-              <img
-                :src="getMoviePosterUrl(data?.poster_path)"
-                alt="Movie Poster"
-              />
-        
-                   
-           
-           
+          <section
+            class="container md:flex border-gray-200 bg-black rounded-md p-5 flex-col mx-auto"
+          >
+            <img
+              :src="getMoviePosterUrl(data?.poster_path)"
+              alt="Movie Poster"
+            />
+
             <div class="text-white p-10">
-
-
-              <div >
+              <div>
                 <p class="text-4xl pb-5 text-white">
-                 {{ data?.original_title || "No data available" }}
-
+                  {{ data?.original_title || "No data available" }}
                 </p>
-                    <div class="text-lg text-yellow-600 hover:text-yellow-400  block">
-                      {{ formatDate(data?.release_date) || "N/A" }}
-                    </div>
-              
+                <div
+                  class="text-lg text-yellow-600 hover:text-yellow-400 block"
+                >
+                  {{ formatDate(data?.release_date) || "N/A" }}
+                </div>
               </div>
               <div class="">
-              
-                  <strong class="text-yellow-500 text-lg block">Original Language:</strong>
-                   <p> {{ data?.original_language || "N/A" }}
-                </p>
+                <strong class="text-yellow-500 text-lg block"
+                  >Original Language:</strong
+                >
+                <p>{{ data?.original_language || "N/A" }}</p>
               </div>
               <div class="my-7">
-                  <strong class="text-yellow-500 text-lg ">Genres:</strong>
-                  <ul>
-                    <a class="p-5 text-gray-200 hover:text-white cursor-pointer" v-for="genre in genres" :key="genre.id">
-                      {{ genre.name }}
-                    </a>
-                  </ul>
-                </div>
-                <div>
-                  <strong class="text-yellow-500">Rating:</strong>
-                  {{ data?.vote_average || "N/A" }}
-                </div>
-                <div class="text-white py-4">
-                  <p><strong class="text-yellow-500 text-lg ">Budget:</strong> {{ data?.budget || "N/A" }}</p>
-                </div>
+                <strong class="text-yellow-500 text-lg">Genres:</strong>
+                <ul>
+                  <a
+                    class="p-5 text-gray-200 hover:text-white cursor-pointer"
+                    v-for="genre in genres"
+                    :key="genre.id"
+                  >
+                    {{ genre.name }}
+                  </a>
+                </ul>
+              </div>
+              <div>
+                <strong class="text-yellow-500">Rating:</strong>
+                {{ data?.vote_average || "N/A" }}
+              </div>
+              <div class="text-white py-4">
+                <p>
+                  <strong class="text-yellow-500 text-lg">Budget:</strong>
+                  {{ data?.budget || "N/A" }}
+                </p>
+              </div>
             </div>
           </section>
           <section class="max-lg:flex-col flex container mx-4">
             <section class="container mx-auto my-10 px-4 max-w-3xl">
-           
               <div class="my-4">
-                <h2 class="text-2xl font-bold  text-yellow-500">Casting</h2>
+                <h2 class="text-2xl font-bold text-yellow-500">Casting</h2>
                 <ul class="flex flex-wrap">
                   <a
                     v-for="actor in casting"
@@ -121,13 +123,9 @@
                     {{ actor.name }}
                   </a>
                 </ul>
-                
-               
-                
               </div>
-              <h2 class="text-3xl mb-5 text-yellow-500 font-bold"> Story :</h2>
+              <h2 class="text-3xl mb-5 text-yellow-500 font-bold">Story :</h2>
               <p class="text-gray-600">{{ data?.overview || "N/A" }}</p>
-        
             </section>
 
             <section

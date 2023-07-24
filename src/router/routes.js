@@ -1,6 +1,7 @@
 import HomePage from "../pages/HomePage.vue";
 import MainLoginPage from "../pages/MainLoginPage.vue";
 import MovieDetails from "../pages/MovieDetails.vue";
+import SettingPage from "../pages/SettingPage.vue";
 import NotFoundPage from "../pages/404.vue";
 import MainLayout from "../layout/MainLayout.vue"
 
@@ -24,10 +25,16 @@ const routes = [
     name: "Login",
     component: MainLoginPage,
   },
+  
   {
     path: "/movies/:id(\\d+)",
     name: "movie-detail",
     component: MovieDetails,
+  },
+  {
+    path: "/setting-page",
+    name: "Setting",
+    component: SettingPage,
   },
   {
     path: "/:no(.*)*",
