@@ -118,13 +118,13 @@
         <div
           class="w-full flex justify-center text-base items-center container"
         >
-         <header-sub-menu  :sub-img="true"> MOVIES </header-sub-menu>
-         <header-sub-menu  :sub-img="true" > TV SERIES </header-sub-menu>
-         <header-sub-menu  > GAMES </header-sub-menu>
-         <header-sub-menu  :sub-img="true" > RAZNKING </header-sub-menu>
+         <header-sub-menu :link="a" :sub-img="true"> MOVIES </header-sub-menu>
+         <header-sub-menu :link="b"  :sub-img="true" > TV SERIES </header-sub-menu>
+         <header-sub-menu :link="c"  > GAMES </header-sub-menu>
+         <header-sub-menu :link="d"  :sub-img="true" > RAZNKING </header-sub-menu>
          <header-sub-menu > VOD </header-sub-menu>
-         <header-sub-menu > TV SHOW </header-sub-menu>
-         <header-sub-menu > MY FILM WEB </header-sub-menu>
+         <header-sub-menu :link="e"  > TV SHOW </header-sub-menu>
+         <header-sub-menu :link="f"  > MY FILM WEB </header-sub-menu>
 
       
         </div>
@@ -134,7 +134,14 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import HeaderSubMenu from './HeaderSubMenu.vue';
+const a=ref(['Home','Login','Setting'])
+const b=ref(['Home','Login','Setting'])
+const c=ref(['Home','Login','Setting'])
+const d=ref(['Home','Login','Setting'])
+const e=ref(['Home','Login','Setting'])
+const f=ref(['Home','Login','Setting'])
 </script>
 
 <style scoped>
