@@ -18,9 +18,11 @@
 </template>
 
 <script setup>
+const router = useRouter()
 import { onMounted, reactive, ref } from "vue";
 import TheInput from "../TheInput.vue";
 import { login } from "../../Utils/loginUtils";
+import { useRoute, useRouter } from "vue-router";
 
 const myCustomStyleClass = "my-custom-style";
 

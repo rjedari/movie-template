@@ -5,23 +5,40 @@
       class="flex first-section-menu ml-1 list-none overflow-x-auto overflow-y-hidden"
     >
       <li
-        v-for="({ link }, index) in SliderLink"
+        v-for="({ link, title }) in SliderLink"
         :key="link"
-        @click="show"
+        @click="update(link)"
       >
-        <a href="">{{ link }}</a>
+        <a @click.prevent>{{ title }}</a>
       </li>
     </div>
   </div>
 </template>
 
 <script setup>
-const emit = defineEmits(["showed"]);
+import { ref, watch } from "vue";
+const emit = defineEmits(["sendTab"]);
+
 defineProps(["SliderLink", "title"]);
-const show = () => {
-  emit("showed");
+const activeTab = ref("");
+const active = "active";
+function update(data) {
+  activeTab.value = data;
+  sendTab();
+}
+
+
+
+const sendTab = () => {
+  emit("sendTab", activeTab.value);
 };
+
+const movieList = ref([]);
+
 </script>
 
-<style>
+<style scoped>
+.active {
+  border: 2px solid rgb(255, 231, 12);
+}
 </style>

@@ -62,7 +62,7 @@
             </div>
           </section>
           <section
-            class="container md:flex border-gray-200 bg-black rounded-md p-5 flex-col mx-auto"
+            class="container md:flex-row border-gray-200 bg-black rounded-md p-5 flex flex-col mx-auto"
           >
             <img
               :src="getMoviePosterUrl(data?.poster_path)"
