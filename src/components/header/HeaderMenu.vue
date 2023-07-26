@@ -137,7 +137,7 @@
 import { ref } from 'vue';
 import HeaderSubMenu from './HeaderSubMenu.vue';
 const emit =defineEmits(['pop'])
-const a=ref(['Home','Login','Setting'])
+const a=ref(['Home','Login','Setting','favorites','profile'])
 const b=ref(['Home','Login','Setting'])
 const c=ref(['Home','Login','Setting'])
 const d=ref(['Home','Login','Setting'])
