@@ -5,7 +5,7 @@
         class="grid grid-cols-4 max-lg:grid-cols-1 max-lg:grid-rows-2 grid-rows-1 max-md:w-fit"
       >
         <div class="col-span-3 max-lg:grid-rows-1">
-          <slider-links :SliderLink="SliderLink" @send-tab="show" />
+          <slider-links :defultClass="true" :SliderLink="SliderLink" @send-tab="show" >Latest and news </slider-links>
           <first-list-wrapper :newMovie="newMovie" />
         </div>
         <first-list-wrapper-aside />

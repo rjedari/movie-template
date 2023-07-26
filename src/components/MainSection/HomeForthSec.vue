@@ -13,14 +13,14 @@
           </div>
 
           <ul
-            class="border-b container overflow-x-auto border-gray-300 flex max-md:justify-normal justify-center"
+            class="border-b overflow-x-auto border-gray-600 max-w-6xl max-xl:max-w-xl flex max-lg:max-w-lg max-md:max-w-md max-xs:max-w-xs max-sm:w-52"
           >
-            <div v-for="(title, index) in linkTitles" :key="title">
-              <the-link-slider
-                :my-custom-link-style="myCustomLinkStyleClass"
-                :title="title"
-              />
-            </div>
+            <slider-links
+              :SliderLink="list"
+              @send-tab="tab"
+              :defultClass="true"
+            >
+            </slider-links>
           </ul>
         </div>
       </div>
@@ -29,11 +29,12 @@
         style="height: 400px"
       >
         <div
-          v-for="({ poster_path , name, vote_average, id }, index) in onTvList"
+          v-for="({ poster_path, name, vote_average, id }, index) in onTvList"
           :key="id"
         >
           <HomeForthSecItem
-            :name="name"
+          :id="id"
+          :name="name"
             :index="index"
             :vote_average="vote_average"
             :src="`${API_IMAGE_BASE_URL}${API_IMAGE_SIZE}${poster_path}`"
@@ -46,15 +47,28 @@
 </template>
 
 <script setup>
-import { onMounted, reactive, ref } from "vue";
+import { onMounted, reactive, ref, watchEffect } from "vue";
 import HomeForthSecItem from "./HomeForthSecItem.vue";
 const myCustomLinkStyleClass = "my-custom-link-style";
 import { API_IMAGE_BASE_URL, API_IMAGE_SIZE } from "../constance/api-constants";
+import SliderLinks from "./SliderLinks.vue";
 
 const myCustomStyleClass = "my-custom-style";
 const title = "See All";
-const linkTitles = reactive(["Movies", "Program", "   TV series"]);
 const onTvList = ref([]);
+const newList = ref();
+
+const list = reactive([
+  { title: "Airing Today", link: "airing_today" },
+  { title: "Top Rated", link: "top_rated" },
+
+  { title: " Most Popular", link: "popular" },
+]);
+function tab(data) {
+  newList.value = data;
+  console.log(data);
+}
+
 const options = {
   method: "GET",
   headers: {
@@ -63,6 +77,20 @@ const options = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNDkyOWJhZjNhNzE1NjliOGI5ZGIyYjQwOGYzMTc5ZSIsInN1YiI6IjY0YTJjZDU1ZThkMDI4MDBmZjhhODMwYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.dxCbiZ9WfudsL0yenKNM5sjDsr109wLWiSUQ2Obh0wo",
   },
 };
+watchEffect(() => {
+  if (newList) {
+    fetch(
+      `https://api.themoviedb.org/3/tv/${newList.value}?language=en-US&page=1`,
+
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        onTvList.value = response.results;
+      })
+      .catch((err) => console.error(err));
+  }
+});
 
 onMounted(() => {
   fetch(

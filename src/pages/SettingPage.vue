@@ -35,10 +35,8 @@
             action=""
             class="flex border-t border-yellow-200 flex-col items-start"
           >
-            <div >
-              <div
-                class="md:flex-row flex flex-col my-6  items-center"
-              >
+            <div>
+              <div class="md:flex-row flex flex-col my-6 items-center">
                 <div class="mx-5 text-lg">First name and last name:</div>
                 <i
                   @click="changeName = true"
@@ -50,12 +48,12 @@
               </div>
 
               <div
-                v-if="changeName" @submit="changeName=false"
+                v-if="changeName"
+                @submit="changeName = false"
                 class="flex w-full md:flex-row flex-col justify-between py-10 px-5 items-center border-gray-200 border border-dashed"
               >
                 <setting-input
                   @save="save"
-            
                   :place-holder1="'First Name'"
                   :place-holder2="'Last Name'"
                 >

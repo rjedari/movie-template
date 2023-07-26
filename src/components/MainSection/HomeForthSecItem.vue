@@ -4,8 +4,11 @@
       <div class="relative p-5 mx-5 w-40 h-60 shadow-lg overflow-hidden">
         <div
           class="absolute -z-1 inset-0 transition-transform duration-500 hover:scale-110"
-        >
-          <img class="image" :src="src" alt="" />
+        >   <router-link :to="{ name: 'movie-detail', params: { id } }">
+          <img class="object-contain image" :src="`${src}`" alt="" />
+        </router-link>
+         
+        
         </div>
         <div class="absolute z-1 -top-1 left-0">
           <i class="fa-solid fa-bookmark relative text-yellow-500 text-4xl">
@@ -30,7 +33,7 @@
 </template>
 
 <script setup>
-defineProps(["src", "name", "vote_average"]);
+defineProps(["src", "name", "vote_average","id"]);
 </script>
 
 <style></style>

@@ -3,22 +3,11 @@ import MainLoginPage from "../pages/MainLoginPage.vue";
 import MovieDetails from "../pages/MovieDetails.vue";
 import SettingPage from "../pages/SettingPage.vue";
 import NotFoundPage from "../pages/404.vue";
+import FavoriteList from"../pages/FavoriteList.vue"
 import MainLayout from "../layout/MainLayout.vue"
 
-const routes = [
-  // {
-  //   path: "/",
-  //   component: MainLayout, 
-  //   children: [
-  //     {
-  //       path: "/",
-  //       component: HomePage, 
-  //     // {
-  //     //   path: "/login-page",
-  //     //   component: MainLoginPage, // Component using the layout
-  //     },
-  //   ],
-  // },
+export const routes = [
+
   { path: "/", name: "Home", component: HomePage },
   {
     path: "/login-page",
@@ -41,6 +30,12 @@ const routes = [
     name: "404",
     component: NotFoundPage,
   },
+  {
+    path: "/favorites",
+    name: "favorites",
+    component: FavoriteList,
+  },
+  
 ];
 
-export { routes as routes };
+

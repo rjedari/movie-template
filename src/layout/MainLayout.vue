@@ -1,7 +1,8 @@
 <template>
   <header>
-    <header-menu />
+    <header-menu @pop="show" />
   </header>
+  <!-- <sign-in-pop-up /> -->
 <slot/>
   <footer>
     <footer-main />
@@ -10,4 +11,9 @@
 <script setup>
 import FooterMain from "../components/footer/FooterMain.vue"
 import HeaderMenu from "../components/header/HeaderMenu.vue";
+import signInPopUp from "../components/signInPopUp.vue";
+function show (){
+  console.log(show);
+}
+
 </script>

@@ -24,8 +24,8 @@
         </div>
         <div class="flex items-center container w-full max-lg:justify-end px-2">
           <div class="lg:w-3/4 w-1/2 max-lg:hidden block">
-            <a
-              href="#"
+            <a @click.prevent="show"
+           
               class="flex items-center w-full justify-center text-sm px-2 bg-white hover:text-blue-500 text-gray-600 font-bold py-2 rounded"
             >
               <img
@@ -33,7 +33,7 @@
                 alt="Google Logo"
                 class="w-5 h-5 mx-2 rounded-lg"
               />
-              <span>Login with Google</span>
+              <span>sign in  with Google</span>
             </a>
           </div>
 
@@ -136,14 +136,22 @@
 <script setup>
 import { ref } from 'vue';
 import HeaderSubMenu from './HeaderSubMenu.vue';
+const emit =defineEmits(['pop'])
 const a=ref(['Home','Login','Setting'])
 const b=ref(['Home','Login','Setting'])
 const c=ref(['Home','Login','Setting'])
 const d=ref(['Home','Login','Setting'])
 const e=ref(['Home','Login','Setting'])
 const f=ref(['Home','Login','Setting'])
-</script>
 
+const pop =ref(false)
+function show(){
+  pop.value =true
+ 
+  emit('pop',pop.value)
+}
+
+</script>
 <style scoped>
 .poster {
   width: 500px !important;

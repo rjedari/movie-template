@@ -4,8 +4,10 @@
       <div class="relative sm:w-44 sm:h-60 w-32 h-52 overflow-hidden">
         <div
           class="absolute -z-1 inset-0 transition-transform duration-500 transform hover:scale-110"
-        >
-          <img class="image" :src="`${src}`" alt="" />
+        ><router-link :to="{ name: 'movie-detail', params: { id } }">
+          <img class="object-contain image" :src="`${src}`" alt="" />
+        </router-link>
+          <img class="" :src="`${src}`" alt="" />
         </div>
         <div class="absolute z-1 -top-1 left-0">
           <i class="fa-solid fa-bookmark relative text-yellow-500 text-4xl">

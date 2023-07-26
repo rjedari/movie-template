@@ -7,7 +7,10 @@
                 class="absolute -z-1 inset-0 transition-transform duration-500 transform hover:scale-110"
               
               >
-              <img class="image" :src="src" alt="" />
+              <router-link :to="{ name: 'movie-detail', params: { id } }">
+          <img class="object-contain image" :src="`${src}`" alt="" />
+        </router-link>
+         
             </div>
 
               <div class="absolute z-1 -top-1 left-0">
@@ -30,7 +33,7 @@
 </template>
 
 <script setup>
-defineProps(["src","vote_count","title"])
+defineProps(["src","vote_count","title","id"])
 </script>
 
 <style>

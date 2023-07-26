@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-
+import signInPopUp from '../components/signInPopUp.vue';
 
 </script>
 

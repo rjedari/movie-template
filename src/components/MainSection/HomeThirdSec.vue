@@ -10,15 +10,11 @@
           </div>
 
           <ul
-            class="border-b container border-gray-300 flex justify-center max-md:justify-normal overflow-x-auto"
-          >
-            <div v-for="(title, index) in linkTitles" :key="index">
-              <the-link-slider
-                :my-custom-link-style="myCustomLinkStyleClass"
-                :title="title"
-              />
-            </div>
-          </ul>
+          class="border-b overflow-x-auto border-gray-600 max-w-6xl max-xl:max-w-xl flex max-lg:max-w-lg max-md:max-w-md max-xs:max-w-xs max-sm:w-52"
+        >
+          <slider-links :SliderLink="list" @send-tab="tab" :defultClass="true" >
+          </slider-links>
+        </ul>
         </div>
       </div>
       <div class="flex flex-col">
@@ -28,6 +24,7 @@
             :key="id"
           >
             <HomeThirdSecItem
+            :id="id"
               :title="title"
               :vote_count="vote_count"
               :index="index"
@@ -42,17 +39,26 @@
 </template>
 
 <script setup>
-import { onMounted, reactive, ref } from "vue";
-import TheLinkSlider from "./TheLinkSlider.vue";
+import { onMounted, reactive, ref,watchEffect } from "vue";
+import SliderLinks from "./SliderLinks.vue";
+
+
 import HomeThirdSecItem from "./HomeThirdSecItem.vue";
 import { API_IMAGE_BASE_URL, API_IMAGE_SIZE } from "../constance/api-constants";
 
-const linkTitles = reactive([
-  "Movies",
-  " The most anticipated",
-  "Top 500",
-  "   TV series",
+const newList = ref();
+
+const list = reactive([
+  { title: "Now Playing", link: "now_playing" },
+  { title: "Upcoming", link: "upcoming" },
+  { title: " Most Popular", link: "popular" },
+  { title: "Top Rated", link: "top_rated" },
+  
 ]);
+function tab(data) {
+  newList.value = data;
+  
+}
 
 const ratedList = ref([]);
 const options = {
@@ -63,6 +69,22 @@ const options = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNDkyOWJhZjNhNzE1NjliOGI5ZGIyYjQwOGYzMTc5ZSIsInN1YiI6IjY0YTJjZDU1ZThkMDI4MDBmZjhhODMwYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.dxCbiZ9WfudsL0yenKNM5sjDsr109wLWiSUQ2Obh0wo",
   },
 };
+
+watchEffect(() => {
+  if (newList) {
+    fetch(
+      `https://api.themoviedb.org/3/movie/${newList.value}?language=en-US&page=1`,
+
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        ratedList.value = response.results;
+      })
+      .catch((err) => console.error(err));
+  }
+});
+
 
 onMounted(() => {
   fetch(

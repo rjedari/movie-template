@@ -13,12 +13,13 @@
   <home-seconde-sec />
   <home-third-sec />
   <home-forth-sec />
+
 </template>
 
 <script setup>
 import { ref, reactive } from "vue";
 import HeaderGrid from "../components/header/HeaderGrid.vue";
-
+import signInPopUp from "../components/signInPopUp.vue";
 import HomeMainSec from "../components/MainSection/HomeMainSec.vue";
 import HomeSecondeSec from "../components/MainSection/HomeSecondeSec.vue";
 import HomeThirdSec from "../components/MainSection/HomeThirdSec.vue";

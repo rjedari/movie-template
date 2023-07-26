@@ -35,11 +35,15 @@ function handlePassInput(data) {
 const username = ref("");
 const password = ref("");
 
-function signin() {
-  login(username.value, password.value);
-  console.log(username.value, password.value);
-  
-}
+async function signin() {
+  try {
+    await login(username.value, password.value)
+    // toast.success('Login Successful')
+      router.replace('/')
+    
+  } catch (error) {
+    toast.error('Login Failed')
+  }}
 </script>
 
 <style scoped>

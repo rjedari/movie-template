@@ -34,7 +34,7 @@
                 movie
               </div>
               <div class="my-3 text-bold text-4xl">
-                {{ data?.original_title || "No data available" }}
+                {{ data?.original_title ||data?.name ||"No data available" }}
               </div>
               <div class="flex max-[600px]:flex-col flex-row justify-between">
                 <div class="flex text-gray-500 max-lg:flex-wrap text-sm">
@@ -110,7 +110,7 @@
               </div>
             </div>
           </section>
-          <section class="max-lg:flex-col flex container mx-4">
+          <section class="max-lg:flex-col flex flex-row mx-auto container ">
             <section class="container mx-auto my-10 px-4 max-w-3xl">
               <div class="my-4">
                 <h2 class="text-2xl font-bold text-yellow-500">Casting</h2>
