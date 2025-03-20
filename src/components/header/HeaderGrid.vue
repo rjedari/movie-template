@@ -11,6 +11,7 @@
         <div class="flex max-sm:mx-1 mt-5 gap-2">
           <div class="relative hover-changes-header raz w-80 overflow-hidden">
             <header-movie-card :details="detailsA" />
+            hello boos boos
           </div>
           <div
             class="relative hover-changes-header raz w-80 h-40 overflow-hidden"
